@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Style Guide</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+</head>
+<style>
+    th{
+        color:azure;
+    }
+</style>
+
+<table class="table tabl-striped">
+    <tr class="bg-info">
+        <th>Name</th>
+        <th>Id</th>
+        <th>Quantity</th>
+    </tr>
+
+    <tbody id="myTable">
+
+    </tbody>
+</table>
+
+<script>
+    var myArray = [
+        {'name':'Apple', 'id':'001', 'quantity':'5'},
+        {'name':'Juice', 'id':'002', 'quantity':'2'},
+        {'name':'Cabbage', 'id':'003', 'quantity':'1'},
+        {'name':'Potatoes', 'id':'004', 'quantity':'7'},
+        {'name':'Cereal', 'id':'005', 'quantity':'2'},
+        {'name':'Milk', 'id':'006', 'quantity':'1'},
+        {'name':'Eggs', 'id':'007', 'quantity':'12'},
+        {'name':'Bread', 'id':'008', 'quantity':'4'},
+
+    ]
+
+    buildTable(myArray)
+
+    function buildTable(data){
+        var table = document.getElementById('myTable')
+
+        for(var i = 0; i < data.length; i++){
+            var row = `<tr>
+                            <td>${data[i].name}</td>
+                            <td>${data[i].id}</td>
+                            <td>${data[i].quantity}</td>
+                        </tr>`
+            table.innerHTML += row
+        }
+    }
+</script>
+</html>
